@@ -51,7 +51,12 @@ function draw_rectangle (){
 	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method! (must pass the string "2d" to the getContext() method.)
 	tutorial_context.fillRect(50, 25, 150, 100); // (x, y, width, height)
-	resultText.innerHTML = "This text is to try to see whether or not the function is working";
+}
+	
+function put_name (){
+	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
+	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
+	console.log("Doeun Kim");
 }
 	
 </script>
@@ -96,6 +101,7 @@ function draw_rectangle (){
 	<a onclick="draw_rectangle();" class="w3-btn w3-grey w3-round"> Draw a rectangle</a>
 	<!--onclick instructs the browser to run a script when the patient clicks button
 	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button-->-->
+	<a onclick="put_name();" class="w3-btn w3-grey w3-round"> My name</a>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
