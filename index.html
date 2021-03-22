@@ -43,10 +43,16 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-var content = canvas.getContext('2d'); //we are turning a drawing content into a variable "content"
+//var tutorial_canvas = document.getElementById("tutorial");
+    // a drawing content into a variable "content"
 	//this is going to be used later (and called) in the function
+
+function draw_rectangle (){
+	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
+	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method! (must pass the string "2d" to the getContext() method.)
+	tutorial_context.fillRect(50, 25, 150, 100); // (x, y, width, height)
+}
 	
-content.fillRect(100, 100, 100, 100); //(x, y, width, height)
 </script>
 
 
