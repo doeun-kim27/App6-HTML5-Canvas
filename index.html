@@ -47,41 +47,41 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 
 
 <style>	
-.body {
-     margin: 0em;
-}
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
+	.body {
+	     margin: 0em;
+	}
+	.page {
+	    width: 100vw;
+	    height: 100vh;
+	    position: fixed;
+	    top: 0;
+	    left: -100vw;
+	    overflow-y: auto;
+	    z-index: 0;
+	    background-color: hsl(0,0%,100%);
+	}
+	  .page:target {
+	    left: 0vw;
+	    z-index: 1;
+	}
+	canvas {
+		border: 1px solid black;
+	}
 </style>
 
 <body>
+<canvas id="b" width="300" height="225">
+	<!--What is Canvas?:
+	provides scripts with a resolution-dependent bitmap canvas, which can be used for rendering graphs, game graphics, art, or other visual images on the fly. -->
+</canvas>
+	
 	
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>App6---HTML5-Canvas</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<canvas id="b" width="300" height="225">
-		<!--What is Canvas?:
-		provides scripts with a resolution-dependent bitmap canvas, which can be used for rendering graphs, game graphics, art, or other visual images on the fly. -->
-	function draw_b() {
-	  var b_canvas = document.getElementById("b");
-	  var b_context = b_canvas.getContext("2d");
-	  b_context.fillRect(50, 25, 150, 100);
-	}
-	</canvas>
+
 	
 	<p>Content goes here.</p>
 	
