@@ -59,7 +59,16 @@ function put_name (){
 	tutorial_context.font = "30px Arial";
 	tutorial_context.fillText("Doeun Kim", 10, 50);
 }
-	
+
+function put_image (){
+	var tutorial_canvas = document.getElementdocument.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
+	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
+	var cat = new Image();
+	cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
+	cat.onload = function(){
+		context.drawImage(cat,0,0);
+	};
+}
 </script>
 
 
@@ -102,7 +111,10 @@ function put_name (){
 	<a onclick="draw_rectangle();" class="w3-btn w3-grey w3-round"> Draw a rectangle</a>
 	<!--onclick instructs the browser to run a script when the patient clicks button
 	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button-->
+	
 	<a onclick="put_name();" class="w3-btn w3-grey w3-round"> My name</a>
+	
+	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> Put Image</a>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
