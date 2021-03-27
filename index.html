@@ -63,8 +63,8 @@ function put_name (){
 function put_image (){
 	var tutorial_canvas = document.getElementdocument.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
+	
 	var cat= document.getElementById("cat"); 
-	cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
 	ctx.drawImage(cat,200,200);
 }
 </script>
@@ -95,6 +95,8 @@ function put_image (){
 </style>
 
 <body>
+<img id="cat" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;">
+	
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>App6---HTML5-Canvas</h1>
 </div>
