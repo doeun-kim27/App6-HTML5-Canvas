@@ -63,8 +63,9 @@ function put_name (){
 function put_image (){
 	var tutorial_canvas = document.getElementdocument.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
-	var cat = new Image();
-	cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
+	var cat_image = document.createElement('img'); 
+	cat_imgage.src = 'https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg'; 
+	tutorial_context(200,25,300,100);
 	cat.onload = function(){
 		context.drawImage(cat,0,0);
 	};
@@ -114,7 +115,7 @@ function put_image (){
 	
 	<a onclick="put_name();" class="w3-btn w3-grey w3-round"> My name</a>
 	
-	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> <img src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;"> Put Image</a>
+	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> Put Image</a>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
