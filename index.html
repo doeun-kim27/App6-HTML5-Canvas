@@ -66,7 +66,7 @@ function put_image (srb,x,y,w,h){
 	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
 	
-	tutorial_context.drawImage(cat,150, 270); //(image, dx, dy, dWidth, dHeight);
+	tutorial_context.drawImage(cat,5, 270, 200, 150); //(image, dx, dy, dWidth, dHeight);
 	//200, 150 (w, h)
 	
 	//var cat = document.createElement("IMG");
@@ -111,6 +111,10 @@ function put_image (srb,x,y,w,h){
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>-->	
 	
 	</canvas>
+	
+<canvas id="tutorial_reset" width="400" height="500">
+	</canvas>
+	
 <!-- <img id="cat" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;">-->
 	
 <div id="content" class="w3-container">
@@ -123,6 +127,7 @@ function put_image (srb,x,y,w,h){
 	
 
 	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> Put Image</a>
+	<a a href="#tutorial_reset" class="w3-btn w3-grey"> Yes </a>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
