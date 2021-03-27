@@ -29,62 +29,94 @@ https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
+<!--this is where the code for header design starts-->	
    <head> 
-      <title>App6---HTML5-Canvas</title>  
+	<!--this title will be shown on the top of the page of app-->
+      <title>App6-HTML5-Canvas</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
+	<!--this is the code for the design of the header: setting it to flat carrot color-->
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
 
 <script>
-var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+//var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+//alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+//console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
 var tutorial_canvas = document.getElementById("tutorial");
-    // a drawing content into a variable "content"
-	//this is going to be used later (and called) in the function
-var cat = new Image();
+/*setting a variable for the canvas element. 
+In Javascript, getElementById() returns an Element object representing the element whose id property matches the specified string
+In short, it is a way to get access to a specific element quickly.
+Main syntax: var element = document.getElementById(id); */
+
+//this variable is going to be used later (and called) in the function
+	
+var cat = new Image(); //this is a code that sets a variable for an image which will be called later in the put_image function
+	//this variable will be called later in the put_image function
 cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
+	//in this code, it brings an image from external wegbsite and put it in the variable. (so that when it is called, it can load this image)
+	//this variable "cat" will be called later in teh put_image function.
 	
+/*this is the function to draw a rectangle inside the canvas, whose id is "tutorial"*/	
 function draw_rectangle (){
-	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
-	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method! (must pass the string "2d" to the getContext() method.)
+	var tutorial_canvas = document.getElementById("tutorial");
+	//document.getElementById() code finds the <canvas> element; a drawing content into a variable "content"
+	var tutorial_context = tutorial_canvas.getContext("2d");
+	//getContext() method! (must pass the string "2d" to the getContext() method.)
+	//this "2d" refers to CanvasRenderingContext2D, which provides 2D rendering context for the drawing surface of a <canvas> element. It is used for drawing shapes, text, images, and other objects. (an infomation from https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D)
 	tutorial_context.fillRect(200, 25, 150, 100); // (x, y, width, height)
-}
-	
-function put_name (){
-	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
-	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
-	tutorial_context.font = "30px Arial";
-	tutorial_context.fillText("Doeun Kim", 10, 50);
+	//a method to draw a rectangle in desired place with desired width/height
 }
 
+/*this is the function to put my name the canvas, whose id is "tutorial"*/		
+function put_name (){
+	var tutorial_canvas = document.getElementById("tutorial");
+	//document.getElementById() code finds the <canvas> element
+	var tutorial_context = tutorial_canvas.getContext("2d");
+	//getContext() method! (must pass the string "2d" to the getContext() method.)
+	//this "2d" refers to CanvasRenderingContext2D, which provides 2D rendering context for the drawing surface of a <canvas> element.
+	tutorial_context.font = "30px Arial";
+	//this sets font and style for the text I am putting below
+	tutorial_context.fillText("Doeun Kim", 10, 50); // fillText(text, x, y)
+	//fillText() draws a text string at the specified coordinates, filling the string's characters with the current fillStyle (source from https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillText)
+	//In this code, it will write "Doeun Kim in x, y position of 10, 50
+}
+
+/*this is the function to put an image inside the canvas, whose id is "tutorial"*/	
 function put_image (srb,x,y,w,h){
-	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
-	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
+	var tutorial_canvas = document.getElementById("tutorial");
+	//document.getElementById() code finds the <canvas> element
+	var tutorial_context = tutorial_canvas.getContext("2d");
+	//getContext() method (must pass the string "2d" to the getContext() method.)
 	
 	tutorial_context.drawImage(cat,5, 270, 200, 150); //(image, dx, dy, dWidth, dHeight);
-	//200, 150 (w, h)
-	
-	//var cat = document.createElement("IMG");
-	//cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
-	//cat.width = "150";
-	//tutorial_context.drawImage(cat,200,200);
+	//in this code draw an image onto the canvas.
+	/*different syntax can include:
+		void ctx.drawImage(image, dx, dy);
+		void ctx.drawImage(image, dx, dy, dWidth, dHeight);
+		void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+	In this code, I used the middle one; I set the x, y position on 5(5, 270), and the size of an image as (200, 150)*/
 }
 
+/*this is the function that will reset all of the information and context inside the canvas, whose id is "tutorial"*/	
 function reset_canvas (){
 	var tutorial_canvas = document.getElementById("tutorial");
+	//document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d");
+	//getContext() method (must pass the string "2d" to the getContext() method.)
 	
 	tutorial_context.clearRect(0, 0,  tutorial_canvas.width, tutorial_canvas.height); //void ctx.clearRect(x, y, width, height);
+	//through context.clearRect method, it erases the pixels in a rectangular area by setting them to transparent black
+	//in this specific code, I try to reset all the information on my canvas, whose id is "tutorial"
+	//resource for more information: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
 }
 </script>
 
 
-
+<!--this is the code for the style of the app-->
 <style>	
 	.body {
 	     margin: 0em;
@@ -103,40 +135,57 @@ function reset_canvas (){
 	    left: 0vw;
 	    z-index: 1;
 	}
+	/*this is the code for the canvas, which make a corder around the canvas. This is applied to the canvas I made, whose Id is "tutorial"
+	the canvas will have a black colored border, whose size is 1 pixel (and solid) */
 	canvas {
 		border: 1px solid black;
 	}
 </style>
 
+<!--this is where the main body code starts that includes four differnt buttons to call functions from JavaScript-->	
 <body>	
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
+	<h1>App6-HTML5-Canvas</h1>
 </div>
-	
-<canvas id="tutorial" width="400" height="500">
 <!--	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>-->	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>-->
 	
+<!--the code below will set the canvas page above the content part and below the header. In this code, I set the canvas id as "tutorial" and this id can be called from the function so that they can call diverse thing "inside" the canvas border
+the canvas width and height is set to 400 and 500 which fits to the iphone size-->	
+<canvas id="tutorial" width="400" height="500">	
 	</canvas>
-	
-<!-- <img id="cat" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;">-->
-	
+
+<!--the code below will include four different codes for button that will call functions. This is the content below the header and canvas-->
 <div id="content" class="w3-container">
+	
 	<!-- button to draw a rectangle-->
 	<a onclick="draw_rectangle();" class="w3-btn w3-grey w3-round"> Draw a rectangle</a>
-	<!--onclick instructs the browser to run a script when the patient clicks button
-	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button-->
+	<!--onclick instructs the browser to run a script when the user clicks button
+	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button
+	this button will call a function "draw_rectangle" which is defined in JavaScript above-->
 	
+	<!-- button to put a name-->
 	<a onclick="put_name();" class="w3-btn w3-grey w3-round"> My name</a>
-	
+	<!--onclick instructs the browser to run a script when the user clicks button
+	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button
+	this button will call a function "put_name" which is defined in JavaScript above-->
 
+	<!--a button to put an image inside the canvas-->	
 	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> Put Image</a>
+	<!--onclick instructs the browser to run a script when the user clicks button
+	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button
+	this button will call a function "put_image" which is defined in JavaScript above-->
 	
+	<!--a button to reset everything inside the canvas-->	
 	<a onclick="reset_canvas();" class="w3-btn w3-grey w3-round"> Reset Canvas</a>
+	<!--onclick instructs the browser to run a script when the user clicks button
+	class="w3-btn" is referring to button icon. it can also be "w3-button", which will have different design. w3-grey and w3-round are the color and design of button
+	this button will call a function "reset_canvas" which is defined in JavaScript above-->
 </div>
 
+<!--this is the code for the footnote below the main context-->	
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+	<p>DIY! HTML-Canvas</p>
 </footer>
 
 </body>
