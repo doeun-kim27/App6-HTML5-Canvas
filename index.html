@@ -63,12 +63,8 @@ function put_name (){
 function put_image (){
 	var tutorial_canvas = document.getElementdocument.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
-	var cat_image = document.createElement('img'); 
-	cat_imgage.src = 'https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg'; 
-	tutorial_context(200,25,300,100);
-	cat.onload = function(){
-		context.drawImage(cat,0,0);
-	};
+	var cat= document.getElementById("cat"); 
+	ctx.drawImage(img,200,200);
 }
 </script>
 
@@ -107,6 +103,8 @@ function put_image (){
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>-->	
 	
 	</canvas>
+<img id="cat" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;">
+	
 <div id="content" class="w3-container">
 	<!-- button to draw a rectangle-->
 	<a onclick="draw_rectangle();" class="w3-btn w3-grey w3-round"> Draw a rectangle</a>
@@ -115,6 +113,7 @@ function put_image (){
 	
 	<a onclick="put_name();" class="w3-btn w3-grey w3-round"> My name</a>
 	
+
 	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> Put Image</a>
 </div>
 
