@@ -76,10 +76,10 @@ function put_image (srb,x,y,w,h){
 }
 
 function reset_canvas (){
-	var tutorial_canvas = document.getElementById("tutorial_canvas");
+	var tutorial_canvas = document.getElementById("tutorial");
 	var tutorial_context = tutorial_canvas.getContext("2d");
 	
-	tutorial_context.clearRect(0, 0,  400, 500);
+	tutorial_context.clearRect(0, 0,  tutorial_canvas.width, tutorial_canvas.height); //void ctx.clearRect(x, y, width, height);
 }
 </script>
 
