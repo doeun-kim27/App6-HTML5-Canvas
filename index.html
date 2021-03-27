@@ -46,7 +46,9 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 var tutorial_canvas = document.getElementById("tutorial");
     // a drawing content into a variable "content"
 	//this is going to be used later (and called) in the function
-
+var cat = new Image();
+cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
+	
 function draw_rectangle (){
 	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method! (must pass the string "2d" to the getContext() method.)
@@ -60,12 +62,17 @@ function put_name (){
 	tutorial_context.fillText("Doeun Kim", 10, 50);
 }
 
-function put_image (){
-	var tutorial_canvas = document.getElementdocument.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
+function put_image (srb,x,y,w,h){
+	var tutorial_canvas = document.getElementById("tutorial"); //document.getElementById() code finds the <canvas> element
 	var tutorial_context = tutorial_canvas.getContext("2d"); //getContext() method
 	
-	var cat= document.getElementById("cat"); 
-	tutorial_context.drawImage(cat,200,200);
+	tutorial_context.drawImage(cat,200, 100, 200, 100); //(image, dx, dy, dWidth, dHeight);
+	//200, 150 (w, h)
+	
+	//var cat = document.createElement("IMG");
+	//cat.src = "https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg";
+	//cat.width = "150";
+	//tutorial_context.drawImage(cat,200,200);
 }
 </script>
 
@@ -94,9 +101,7 @@ function put_image (){
 	}
 </style>
 
-<body>
-<img id="cat" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;">
-	
+<body>	
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>App6---HTML5-Canvas</h1>
 </div>
