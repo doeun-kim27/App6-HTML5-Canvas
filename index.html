@@ -74,6 +74,12 @@ function put_image (srb,x,y,w,h){
 	//cat.width = "150";
 	//tutorial_context.drawImage(cat,200,200);
 }
+
+function reset_canvas (){
+	var tutorial_canvas = document.getElementById("tutorial_canvas");
+	var tutorial_context = tutorial_canvas.getContext("2d");
+	
+	tutorial_context.clearRect(0, 0,  canvas.width, canvas.height);
 </script>
 
 
@@ -112,9 +118,6 @@ function put_image (srb,x,y,w,h){
 	
 	</canvas>
 	
-<canvas id="tutorial_reset" width="400" height="500">
-	</canvas>
-	
 <!-- <img id="cat" src="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg" style="width:219px;height:133px;">-->
 	
 <div id="content" class="w3-container">
@@ -127,7 +130,7 @@ function put_image (srb,x,y,w,h){
 	
 
 	<a onclick="put_image();" class="w3-btn w3-grey w3-round"> Put Image</a>
-	<a a href="#tutorial_reset" class="w3-btn w3-grey"> Yes </a>
+	<a onclick="reset_canvas();" class="w3-btn w3-grey w3-round"> Reset Canvas</a>
 </div>
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
